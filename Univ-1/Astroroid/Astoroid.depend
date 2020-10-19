@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1496001437 source:d:\docs\prog\astoroid\main.cpp
+	<SFML/Graphics.hpp>
+	<time.h>
+	<list>
+	<cmath>
+	<iostream>
+	<string>
+	<sstream>
+
