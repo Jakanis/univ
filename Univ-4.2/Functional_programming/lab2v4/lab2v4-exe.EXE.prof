@@ -1,0 +1,654 @@
+	Sun May 03 13:53 2020 Time and Allocation Profiling Report  (Final)
+
+	   lab2v4-exe.EXE +RTS -N -p -RTS
+
+	total time  =        4.57 secs   (16918 ticks @ 1000 us, 8 processors)
+	total alloc = 16,573,690,936 bytes  (excludes profiling overheads)
+
+COST CENTRE                      MODULE                    SRC                                                %time %alloc
+
+integrate                        Lib                       src\Lib.hs:(31,1)-(34,54)                           24.4   20.2
+chunksOf                         Data.List.Split.Internals src\Data\List\Split\Internals.hs:(514,1)-(517,49)   19.3   11.4
+precision_integrate.new_result   Lib                       src\Lib.hs:41:19-58                                 12.6   16.1
+rectangular                      Lib                       src\Lib.hs:21:1-39                                   9.4   14.9
+MAIN                             MAIN                      <built-in>                                           5.7    0.0
+precision_integrate''.new_result Lib                       src\Lib.hs:89:19-68                                  5.2   16.1
+precision_integrateST.new_result Lib                       src\Lib.hs:108:19-60                                 3.7   16.1
+integrateST''                    Lib                       src\Lib.hs:(69,1)-(72,60)                            3.3    0.0
+integrateST''.right              Lib                       src\Lib.hs:72:29-60                                  2.9    0.0
+chunksOf.splitter                Data.List.Split.Internals src\Data\List\Split\Internals.hs:(516,3)-(517,49)    2.6    0.0
+f                                Main                      app\Main.hs:6:1-15                                   1.8    0.0
+integrateST.right                Lib                       src\Lib.hs:101:29-56                                 1.7    0.0
+f.\                              Main                      app\Main.hs:6:12-14                                  1.6    5.1
+integrateST''.left               Lib                       src\Lib.hs:71:29-60                                  1.3    0.0
+integrate''.sublists             Lib                       src\Lib.hs:82:54-107                                 1.1    0.0
+
+
+                                                                                                                                            individual      inherited
+COST CENTRE                           MODULE                       SRC                                                  no.      entries  %time %alloc   %time %alloc
+
+MAIN                                  MAIN                         <built-in>                                            277          0    5.7    0.0   100.0  100.0
+ CAF                                  GHC.Conc.Windows             <entire-module>                                       510          0    0.0    0.0     0.0    0.0
+ CAF                                  GHC.IO.Handle.Text           <entire-module>                                       473          0    0.0    0.0     0.0    0.0
+ CAF                                  GHC.IO.Handle.FD             <entire-module>                                       471          0    0.0    0.0     0.0    0.0
+ CAF                                  GHC.IO.Encoding.CodePage     <entire-module>                                       462          0    0.0    0.0     0.0    0.0
+ CAF                                  GHC.IO.Encoding              <entire-module>                                       461          0    0.0    0.0     0.0    0.0
+ CAF                                  GHC.Float                    <entire-module>                                       453          0    0.0    0.0     0.0    0.0
+ CAF                                  GHC.Conc.Sync                <entire-module>                                       448          0    0.0    0.0     0.0    0.0
+ CAF:$fApplicativeEval3               Control.Parallel.Strategies  <no location info>                                    378          0    0.0    0.0     0.0    0.0
+  liftA2                              Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              757          1    0.0    0.0     0.0    0.0
+ CAF:$fApplicativeEval5               Control.Parallel.Strategies  <no location info>                                    380          0    0.0    0.0     0.0    0.0
+  pure                                Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              768          1    0.0    0.0     0.0    0.0
+ CAF:$fFunctorEval2                   Control.Parallel.Strategies  <no location info>                                    382          0    0.0    0.0     0.0    0.0
+  fmap                                Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:13-19              770          1    0.0    0.0     0.0    0.0
+ CAF:$fMonadEval1                     Control.Parallel.Strategies  <no location info>                                    373          0    0.0    0.0     0.0    0.0
+  return                              Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:35-39              765          1    0.0    0.0     0.0    0.0
+ CAF:$fMonadEval3                     Control.Parallel.Strategies  <no location info>                                    375          0    0.0    0.0     0.0    0.0
+  >>=                                 Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:35-39              762          1    0.0    0.0     0.0    0.0
+ CAF:batchMT11                        Main                         <no location info>                                    299          0    0.0    0.0     0.0    0.0
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            650          0    0.0    0.0     0.0    0.0
+ CAF:batchMT13                        Main                         <no location info>                                    308          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            738          1    0.0    0.0     0.0    0.0
+ CAF:batchMT14                        Main                         <no location info>                                    302          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            931          0    0.0    0.0     0.0    0.0
+   integral'                          Lib                          src\Lib.hs:(63,1)-(64,46)                             932          1    0.0    0.0     0.0    0.0
+    integral'.init_delta              Lib                          src\Lib.hs:64:27-46                                   933          1    0.0    0.0     0.0    0.0
+    integrate'                        Lib                          src\Lib.hs:(50,1)-(53,96)                             934          1    0.0    0.0     0.0    0.0
+     integrate'.sublists              Lib                          src\Lib.hs:53:29-96                                   939          1    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                    949          1    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     940          1    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             941          1    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     942          5    0.0    0.0     0.0    0.0
+     parMap                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               935          1    0.0    0.0     0.0    0.0
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            953          4    0.0    0.0     0.0    0.0
+      using                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               936          1    0.0    0.0     0.0    0.0
+       runEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               937          0    0.0    0.0     0.0    0.0
+        unEval_                       Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              938          5    0.0    0.0     0.0    0.0
+        liftA2                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              943          0    0.0    0.0     0.0    0.0
+         rparWith                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               946          0    0.0    0.0     0.0    0.0
+          parEval                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       947          0    0.0    0.0     0.0    0.0
+           parEval.r                  Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               950          4    0.0    0.0     0.0    0.0
+      rparWith                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               944          0    0.0    0.0     0.0    0.0
+       parEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       945          4    0.0    0.0     0.0    0.0
+       rseq                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               951          4    0.0    0.0     0.0    0.0
+    precision_integrate'              Lib                          src\Lib.hs:(56,1)-(60,65)                             954          1    0.0    0.0     0.0    0.0
+     precision_integrate'.new_result  Lib                          src\Lib.hs:60:19-65                                   955          1    0.0    0.0     0.0    0.0
+      integrate'                      Lib                          src\Lib.hs:(50,1)-(53,96)                             956          1    0.0    0.0     0.0    0.0
+       integrate'.sublists            Lib                          src\Lib.hs:53:29-96                                   961          1    0.0    0.0     0.0    0.0
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                    971          1    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     962          1    0.0    0.0     0.0    0.0
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             963          1    0.0    0.0     0.0    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     964          8    0.0    0.0     0.0    0.0
+       parMap                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               957          1    0.0    0.0     0.0    0.0
+        integrateST                   Lib                          src\Lib.hs:(98,1)-(101,56)                            975          7    0.0    0.0     0.0    0.0
+        using                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               958          1    0.0    0.0     0.0    0.0
+         runEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               959          0    0.0    0.0     0.0    0.0
+          unEval_                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              960          8    0.0    0.0     0.0    0.0
+          liftA2                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              965          0    0.0    0.0     0.0    0.0
+           rparWith                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               968          0    0.0    0.0     0.0    0.0
+            parEval                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       969          0    0.0    0.0     0.0    0.0
+             parEval.r                Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               972          7    0.0    0.0     0.0    0.0
+        rparWith                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               966          0    0.0    0.0     0.0    0.0
+         parEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       967          7    0.0    0.0     0.0    0.0
+         rseq                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               973          7    0.0    0.0     0.0    0.0
+ CAF:batchMT15                        Main                         <no location info>                                    303          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            886          0    0.0    0.0     0.0    0.0
+   integral'                          Lib                          src\Lib.hs:(63,1)-(64,46)                             887          1    0.0    0.0     0.0    0.0
+    integral'.init_delta              Lib                          src\Lib.hs:64:27-46                                   888          1    0.0    0.0     0.0    0.0
+    integrate'                        Lib                          src\Lib.hs:(50,1)-(53,96)                             889          1    0.0    0.0     0.0    0.0
+     integrate'.sublists              Lib                          src\Lib.hs:53:29-96                                   894          1    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                    904          1    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     895          1    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             896          1    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     897          5    0.0    0.0     0.0    0.0
+     parMap                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               890          1    0.0    0.0     0.0    0.0
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            908          4    0.0    0.0     0.0    0.0
+      using                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               891          1    0.0    0.0     0.0    0.0
+       runEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               892          0    0.0    0.0     0.0    0.0
+        unEval_                       Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              893          5    0.0    0.0     0.0    0.0
+        liftA2                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              898          0    0.0    0.0     0.0    0.0
+         rparWith                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               901          0    0.0    0.0     0.0    0.0
+          parEval                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       902          0    0.0    0.0     0.0    0.0
+           parEval.r                  Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               905          4    0.0    0.0     0.0    0.0
+      rparWith                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               899          0    0.0    0.0     0.0    0.0
+       parEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       900          4    0.0    0.0     0.0    0.0
+       rseq                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               906          4    0.0    0.0     0.0    0.0
+    precision_integrate'              Lib                          src\Lib.hs:(56,1)-(60,65)                             909          1    0.0    0.0     0.0    0.0
+     precision_integrate'.new_result  Lib                          src\Lib.hs:60:19-65                                   910          1    0.0    0.0     0.0    0.0
+      integrate'                      Lib                          src\Lib.hs:(50,1)-(53,96)                             911          1    0.0    0.0     0.0    0.0
+       integrate'.sublists            Lib                          src\Lib.hs:53:29-96                                   916          1    0.0    0.0     0.0    0.0
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                    926          1    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     917          1    0.0    0.0     0.0    0.0
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             918          1    0.0    0.0     0.0    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     919          8    0.0    0.0     0.0    0.0
+       parMap                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               912          1    0.0    0.0     0.0    0.0
+        integrateST                   Lib                          src\Lib.hs:(98,1)-(101,56)                            930          7    0.0    0.0     0.0    0.0
+        using                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               913          1    0.0    0.0     0.0    0.0
+         runEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               914          0    0.0    0.0     0.0    0.0
+          unEval_                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              915          8    0.0    0.0     0.0    0.0
+          liftA2                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              920          0    0.0    0.0     0.0    0.0
+           rparWith                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               923          0    0.0    0.0     0.0    0.0
+            parEval                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       924          0    0.0    0.0     0.0    0.0
+             parEval.r                Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               927          7    0.0    0.0     0.0    0.0
+        rparWith                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               921          0    0.0    0.0     0.0    0.0
+         parEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       922          7    0.0    0.0     0.0    0.0
+         rseq                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               928          7    0.0    0.0     0.0    0.0
+ CAF:batchMT16                        Main                         <no location info>                                    304          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            841          0    0.0    0.0     0.0    0.0
+   integral'                          Lib                          src\Lib.hs:(63,1)-(64,46)                             842          1    0.0    0.0     0.0    0.0
+    integral'.init_delta              Lib                          src\Lib.hs:64:27-46                                   843          1    0.0    0.0     0.0    0.0
+    integrate'                        Lib                          src\Lib.hs:(50,1)-(53,96)                             844          1    0.0    0.0     0.0    0.0
+     integrate'.sublists              Lib                          src\Lib.hs:53:29-96                                   849          1    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                    859          1    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     850          1    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             851          1    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     852          5    0.0    0.0     0.0    0.0
+     parMap                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               845          1    0.0    0.0     0.0    0.0
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            863          4    0.0    0.0     0.0    0.0
+      using                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               846          1    0.0    0.0     0.0    0.0
+       runEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               847          0    0.0    0.0     0.0    0.0
+        unEval_                       Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              848          5    0.0    0.0     0.0    0.0
+        liftA2                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              853          0    0.0    0.0     0.0    0.0
+         rparWith                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               856          0    0.0    0.0     0.0    0.0
+          parEval                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       857          0    0.0    0.0     0.0    0.0
+           parEval.r                  Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               860          4    0.0    0.0     0.0    0.0
+      rparWith                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               854          0    0.0    0.0     0.0    0.0
+       parEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       855          4    0.0    0.0     0.0    0.0
+       rseq                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               861          4    0.0    0.0     0.0    0.0
+    precision_integrate'              Lib                          src\Lib.hs:(56,1)-(60,65)                             864          1    0.0    0.0     0.0    0.0
+     precision_integrate'.new_result  Lib                          src\Lib.hs:60:19-65                                   865          1    0.0    0.0     0.0    0.0
+      integrate'                      Lib                          src\Lib.hs:(50,1)-(53,96)                             866          1    0.0    0.0     0.0    0.0
+       integrate'.sublists            Lib                          src\Lib.hs:53:29-96                                   871          1    0.0    0.0     0.0    0.0
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                    881          1    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     872          1    0.0    0.0     0.0    0.0
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             873          1    0.0    0.0     0.0    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     874          8    0.0    0.0     0.0    0.0
+       parMap                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               867          1    0.0    0.0     0.0    0.0
+        integrateST                   Lib                          src\Lib.hs:(98,1)-(101,56)                            885          7    0.0    0.0     0.0    0.0
+        using                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               868          1    0.0    0.0     0.0    0.0
+         runEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               869          0    0.0    0.0     0.0    0.0
+          unEval_                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              870          8    0.0    0.0     0.0    0.0
+          liftA2                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              875          0    0.0    0.0     0.0    0.0
+           rparWith                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               878          0    0.0    0.0     0.0    0.0
+            parEval                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       879          0    0.0    0.0     0.0    0.0
+             parEval.r                Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               882          7    0.0    0.0     0.0    0.0
+        rparWith                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               876          0    0.0    0.0     0.0    0.0
+         parEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       877          7    0.0    0.0     0.0    0.0
+         rseq                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               883          7    0.0    0.0     0.0    0.0
+ CAF:batchMT17                        Main                         <no location info>                                    305          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            796          0    0.0    0.0     0.0    0.0
+   integral'                          Lib                          src\Lib.hs:(63,1)-(64,46)                             797          1    0.0    0.0     0.0    0.0
+    integral'.init_delta              Lib                          src\Lib.hs:64:27-46                                   798          1    0.0    0.0     0.0    0.0
+    integrate'                        Lib                          src\Lib.hs:(50,1)-(53,96)                             799          1    0.0    0.0     0.0    0.0
+     integrate'.sublists              Lib                          src\Lib.hs:53:29-96                                   804          1    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                    814          1    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     805          1    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             806          1    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     807          5    0.0    0.0     0.0    0.0
+     parMap                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               800          1    0.0    0.0     0.0    0.0
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            818          4    0.0    0.0     0.0    0.0
+      using                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               801          1    0.0    0.0     0.0    0.0
+       runEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               802          0    0.0    0.0     0.0    0.0
+        unEval_                       Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              803          5    0.0    0.0     0.0    0.0
+        liftA2                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              808          0    0.0    0.0     0.0    0.0
+         rparWith                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               811          0    0.0    0.0     0.0    0.0
+          parEval                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       812          0    0.0    0.0     0.0    0.0
+           parEval.r                  Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               815          4    0.0    0.0     0.0    0.0
+      rparWith                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               809          0    0.0    0.0     0.0    0.0
+       parEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       810          4    0.0    0.0     0.0    0.0
+       rseq                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               816          4    0.0    0.0     0.0    0.0
+    precision_integrate'              Lib                          src\Lib.hs:(56,1)-(60,65)                             819          1    0.0    0.0     0.0    0.0
+     precision_integrate'.new_result  Lib                          src\Lib.hs:60:19-65                                   820          1    0.0    0.0     0.0    0.0
+      integrate'                      Lib                          src\Lib.hs:(50,1)-(53,96)                             821          1    0.0    0.0     0.0    0.0
+       integrate'.sublists            Lib                          src\Lib.hs:53:29-96                                   826          1    0.0    0.0     0.0    0.0
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                    836          1    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     827          1    0.0    0.0     0.0    0.0
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             828          1    0.0    0.0     0.0    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     829          8    0.0    0.0     0.0    0.0
+       parMap                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               822          1    0.0    0.0     0.0    0.0
+        integrateST                   Lib                          src\Lib.hs:(98,1)-(101,56)                            840          7    0.0    0.0     0.0    0.0
+        using                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               823          1    0.0    0.0     0.0    0.0
+         runEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               824          0    0.0    0.0     0.0    0.0
+          unEval_                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              825          8    0.0    0.0     0.0    0.0
+          liftA2                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              830          0    0.0    0.0     0.0    0.0
+           rparWith                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               833          0    0.0    0.0     0.0    0.0
+            parEval                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       834          0    0.0    0.0     0.0    0.0
+             parEval.r                Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               837          7    0.0    0.0     0.0    0.0
+        rparWith                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               831          0    0.0    0.0     0.0    0.0
+         parEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       832          7    0.0    0.0     0.0    0.0
+         rseq                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               838          7    0.0    0.0     0.0    0.0
+ CAF:batchMT18                        Main                         <no location info>                                    306          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            741          0    0.0    0.0     0.0    0.0
+   integral'                          Lib                          src\Lib.hs:(63,1)-(64,46)                             742          1    0.0    0.0     0.0    0.0
+    integral'.init_delta              Lib                          src\Lib.hs:64:27-46                                   743          1    0.0    0.0     0.0    0.0
+    integrate'                        Lib                          src\Lib.hs:(50,1)-(53,96)                             744          1    0.0    0.0     0.0    0.0
+     integrate'.sublists              Lib                          src\Lib.hs:53:29-96                                   753          1    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                    767          1    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     754          1    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             755          1    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     756          5    0.0    0.0     0.0    0.0
+     parMap                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               745          1    0.0    0.0     0.0    0.0
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            773          4    0.0    0.0     0.0    0.0
+      using                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               746          1    0.0    0.0     0.0    0.0
+       runEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               748          0    0.0    0.0     0.0    0.0
+        unEval_                       Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              749          5    0.0    0.0     0.0    0.0
+        liftA2                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              758          0    0.0    0.0     0.0    0.0
+         rparWith                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               763          0    0.0    0.0     0.0    0.0
+          parEval                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       764          0    0.0    0.0     0.0    0.0
+           parEval.r                  Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               769          4    0.0    0.0     0.0    0.0
+      rparWith                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               760          0    0.0    0.0     0.0    0.0
+       parEval                        Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       761          4    0.0    0.0     0.0    0.0
+       rseq                           Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               771          4    0.0    0.0     0.0    0.0
+    precision_integrate'              Lib                          src\Lib.hs:(56,1)-(60,65)                             774          1    0.0    0.0     0.0    0.0
+     precision_integrate'.new_result  Lib                          src\Lib.hs:60:19-65                                   775          1    0.0    0.0     0.0    0.0
+      integrate'                      Lib                          src\Lib.hs:(50,1)-(53,96)                             776          1    0.0    0.0     0.0    0.0
+       integrate'.sublists            Lib                          src\Lib.hs:53:29-96                                   781          1    0.0    0.0     0.0    0.0
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                    791          1    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     782          1    0.0    0.0     0.0    0.0
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             783          1    0.0    0.0     0.0    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     784          8    0.0    0.0     0.0    0.0
+       parMap                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               777          1    0.0    0.0     0.0    0.0
+        integrateST                   Lib                          src\Lib.hs:(98,1)-(101,56)                            795          7    0.0    0.0     0.0    0.0
+        using                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:338:1-35               778          1    0.0    0.0     0.0    0.0
+         runEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               779          0    0.0    0.0     0.0    0.0
+          unEval_                     Control.Parallel.Strategies  Control\Parallel\Strategies.hs:210:24-30              780          8    0.0    0.0     0.0    0.0
+          liftA2                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:211:22-32              785          0    0.0    0.0     0.0    0.0
+           rparWith                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               788          0    0.0    0.0     0.0    0.0
+            parEval                   Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       789          0    0.0    0.0     0.0    0.0
+             parEval.r                Control.Parallel.Strategies  Control\Parallel\Strategies.hs:518:5-28               792          7    0.0    0.0     0.0    0.0
+        rparWith                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               786          0    0.0    0.0     0.0    0.0
+         parEval                      Control.Parallel.Strategies  Control\Parallel\Strategies.hs:(513,1)-(518,28)       787          7    0.0    0.0     0.0    0.0
+         rseq                         Control.Parallel.Strategies  Control\Parallel\Strategies.hs:429:1-26               793          7    0.0    0.0     0.0    0.0
+ CAF:batchMT20                        Main                         <no location info>                                    307          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            740          0    0.0    0.0     0.0    0.0
+ CAF:batchMT22                        Main                         <no location info>                                    316          0    0.0    0.0     0.0    0.0
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                            976          1    0.0    0.0     0.0    0.0
+ CAF:batchMT23                        Main                         <no location info>                                    310          0    0.0    0.0    22.6   18.7
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                           1121          0    0.0    0.0    22.6   18.7
+   integral''                         Lib                          src\Lib.hs:(92,1)-(93,46)                            1122          1    0.0    0.0    22.6   18.7
+    precision_integrate''             Lib                          src\Lib.hs:(85,1)-(89,68)                            1136         21    0.0    0.0    22.6   18.7
+     precision_integrate''.new_result Lib                          src\Lib.hs:89:19-68                                  1137         21    3.3    9.7    22.6   18.7
+      integrate''                     Lib                          src\Lib.hs:(75,1)-(82,107)                           1138        312    0.0    0.0    19.3    9.0
+       integrateST''                  Lib                          src\Lib.hs:(69,1)-(72,60)                            1150    9629085    1.9    0.0     5.6    2.1
+        integrateST''.left            Lib                          src\Lib.hs:71:29-60                                  1151    8945308    0.7    0.0     2.3    2.1
+         rectangular                  Lib                          src\Lib.hs:21:1-39                                   1152    8630706    0.8    1.3     1.5    2.1
+          f                           Main                         app\Main.hs:6:1-15                                   1153          0    0.5    0.0     0.7    0.9
+           f.\                        Main                         app\Main.hs:6:12-14                                  1154    9098401    0.2    0.9     0.2    0.9
+        integrateST''.right           Lib                          src\Lib.hs:72:29-60                                  1155    8530552    1.5    0.0     1.5    0.0
+       integrate''.right              Lib                          src\Lib.hs:81:54-106                                 1139        146    0.0    0.0     0.0    0.0
+       integrate''.sublists           Lib                          src\Lib.hs:82:54-107                                 1140        146    0.7    0.0    13.6    6.9
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                   1145        151    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1141        146   11.4    6.9    12.9    6.9
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1142        146    0.0    0.0     1.5    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1143        438    1.5    0.0     1.5    0.0
+       integrate''.left               Lib                          src\Lib.hs:80:54-106                                 1149        145    0.0    0.0     0.0    0.0
+       rectangular                    Lib                          src\Lib.hs:21:1-39                                   1146         10    0.0    0.0     0.0    0.0
+        f                             Main                         app\Main.hs:6:1-15                                   1147          0    0.0    0.0     0.0    0.0
+         f.\                          Main                         app\Main.hs:6:12-14                                  1148         10    0.0    0.0     0.0    0.0
+    integrate''                       Lib                          src\Lib.hs:(75,1)-(82,107)                           1124          7    0.0    0.0     0.0    0.0
+     rectangular                      Lib                          src\Lib.hs:21:1-39                                   1132          4    0.0    0.0     0.0    0.0
+      f                               Main                         app\Main.hs:6:1-15                                   1133          0    0.0    0.0     0.0    0.0
+       f.\                            Main                         app\Main.hs:6:12-14                                  1134          4    0.0    0.0     0.0    0.0
+     integrate''.left                 Lib                          src\Lib.hs:80:54-106                                 1135          3    0.0    0.0     0.0    0.0
+     integrate''.right                Lib                          src\Lib.hs:81:54-106                                 1125          3    0.0    0.0     0.0    0.0
+     integrate''.sublists             Lib                          src\Lib.hs:82:54-107                                 1126          3    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                   1131          3    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1127          3    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1128          3    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1129          9    0.0    0.0     0.0    0.0
+    integral''.init_delta             Lib                          src\Lib.hs:93:27-46                                  1123          1    0.0    0.0     0.0    0.0
+ CAF:batchMT24                        Main                         <no location info>                                    311          0    0.0    0.0    11.3    9.3
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                           1086          0    0.0    0.0    11.3    9.3
+   integral''                         Lib                          src\Lib.hs:(92,1)-(93,46)                            1087          1    0.0    0.0    11.3    9.3
+    precision_integrate''             Lib                          src\Lib.hs:(85,1)-(89,68)                            1101         20    0.0    0.0    11.3    9.3
+     precision_integrate''.new_result Lib                          src\Lib.hs:89:19-68                                  1102         20    1.5    4.9    11.3    9.3
+      integrate''                     Lib                          src\Lib.hs:(75,1)-(82,107)                           1103        299    0.0    0.0     9.8    4.4
+       integrateST''                  Lib                          src\Lib.hs:(69,1)-(72,60)                            1115    4850027    0.8    0.0     2.7    1.1
+        integrateST''.left            Lib                          src\Lib.hs:71:29-60                                  1116    4354340    0.3    0.0     1.0    1.1
+         rectangular                  Lib                          src\Lib.hs:21:1-39                                   1117    4177266    0.4    0.6     0.7    1.1
+          f                           Main                         app\Main.hs:6:1-15                                   1118          0    0.2    0.0     0.3    0.4
+           f.\                        Main                         app\Main.hs:6:12-14                                  1119    4467978    0.1    0.4     0.1    0.4
+        integrateST''.right           Lib                          src\Lib.hs:72:29-60                                  1120    4076940    0.9    0.0     0.9    0.0
+       integrate''.sublists           Lib                          src\Lib.hs:82:54-107                                 1105        141    0.3    0.0     7.1    3.4
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                   1110        145    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1106        141    5.9    3.4     6.8    3.4
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1107        141    0.0    0.0     0.8    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1108        418    0.8    0.0     0.8    0.0
+       integrate''.left               Lib                          src\Lib.hs:80:54-106                                 1114        140    0.0    0.0     0.0    0.0
+       integrate''.right              Lib                          src\Lib.hs:81:54-106                                 1104        139    0.0    0.0     0.0    0.0
+       rectangular                    Lib                          src\Lib.hs:21:1-39                                   1111         10    0.0    0.0     0.0    0.0
+        f                             Main                         app\Main.hs:6:1-15                                   1112          0    0.0    0.0     0.0    0.0
+         f.\                          Main                         app\Main.hs:6:12-14                                  1113         10    0.0    0.0     0.0    0.0
+    integrate''                       Lib                          src\Lib.hs:(75,1)-(82,107)                           1089          7    0.0    0.0     0.0    0.0
+     rectangular                      Lib                          src\Lib.hs:21:1-39                                   1097          4    0.0    0.0     0.0    0.0
+      f                               Main                         app\Main.hs:6:1-15                                   1098          0    0.0    0.0     0.0    0.0
+       f.\                            Main                         app\Main.hs:6:12-14                                  1099          4    0.0    0.0     0.0    0.0
+     integrate''.left                 Lib                          src\Lib.hs:80:54-106                                 1100          3    0.0    0.0     0.0    0.0
+     integrate''.right                Lib                          src\Lib.hs:81:54-106                                 1090          3    0.0    0.0     0.0    0.0
+     integrate''.sublists             Lib                          src\Lib.hs:82:54-107                                 1091          3    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                   1096          3    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1092          3    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1093          3    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1094          9    0.0    0.0     0.0    0.0
+    integral''.init_delta             Lib                          src\Lib.hs:93:27-46                                  1088          1    0.0    0.0     0.0    0.0
+ CAF:batchMT25                        Main                         <no location info>                                    312          0    0.0    0.0     3.2    2.4
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                           1051          0    0.0    0.0     3.2    2.4
+   integral''                         Lib                          src\Lib.hs:(92,1)-(93,46)                            1052          1    0.0    0.0     3.2    2.4
+    precision_integrate''             Lib                          src\Lib.hs:(85,1)-(89,68)                            1066         18    0.0    0.0     3.2    2.4
+     precision_integrate''.new_result Lib                          src\Lib.hs:89:19-68                                  1067         18    0.3    1.2     3.2    2.4
+      integrate''                     Lib                          src\Lib.hs:(75,1)-(82,107)                           1068        271    0.0    0.0     2.9    1.2
+       integrateST''                  Lib                          src\Lib.hs:(69,1)-(72,60)                            1080    1203304    0.4    0.0     1.1    0.3
+        integrateST''.left            Lib                          src\Lib.hs:71:29-60                                  1081    1099894    0.2    0.0     0.4    0.3
+         rectangular                  Lib                          src\Lib.hs:21:1-39                                   1082    1064631    0.1    0.2     0.3    0.3
+          f                           Main                         app\Main.hs:6:1-15                                   1083          0    0.1    0.0     0.1    0.1
+           f.\                        Main                         app\Main.hs:6:12-14                                  1084    1121997    0.1    0.1     0.1    0.1
+        integrateST''.right           Lib                          src\Lib.hs:72:29-60                                  1085    1068680    0.3    0.0     0.3    0.0
+       integrate''.left               Lib                          src\Lib.hs:80:54-106                                 1079        127    0.0    0.0     0.0    0.0
+       integrate''.sublists           Lib                          src\Lib.hs:82:54-107                                 1070        126    0.1    0.0     1.7    0.9
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                   1075        131    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1071        127    1.5    0.9     1.7    0.9
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1072        126    0.0    0.0     0.2    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1073        375    0.2    0.0     0.2    0.0
+       integrate''.right              Lib                          src\Lib.hs:81:54-106                                 1069        124    0.0    0.0     0.0    0.0
+       rectangular                    Lib                          src\Lib.hs:21:1-39                                   1076         10    0.0    0.0     0.0    0.0
+        f                             Main                         app\Main.hs:6:1-15                                   1077          0    0.0    0.0     0.0    0.0
+         f.\                          Main                         app\Main.hs:6:12-14                                  1078         10    0.0    0.0     0.0    0.0
+    integrate''                       Lib                          src\Lib.hs:(75,1)-(82,107)                           1054          7    0.0    0.0     0.0    0.0
+     rectangular                      Lib                          src\Lib.hs:21:1-39                                   1062          4    0.0    0.0     0.0    0.0
+      f                               Main                         app\Main.hs:6:1-15                                   1063          0    0.0    0.0     0.0    0.0
+       f.\                            Main                         app\Main.hs:6:12-14                                  1064          4    0.0    0.0     0.0    0.0
+     integrate''.left                 Lib                          src\Lib.hs:80:54-106                                 1065          3    0.0    0.0     0.0    0.0
+     integrate''.right                Lib                          src\Lib.hs:81:54-106                                 1055          3    0.0    0.0     0.0    0.0
+     integrate''.sublists             Lib                          src\Lib.hs:82:54-107                                 1056          3    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                   1061          3    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1057          3    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1058          3    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1059          9    0.0    0.0     0.0    0.0
+    integral''.init_delta             Lib                          src\Lib.hs:93:27-46                                  1053          1    0.0    0.0     0.0    0.0
+ CAF:batchMT26                        Main                         <no location info>                                    313          0    0.0    0.0     1.2    0.6
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                           1016          0    0.0    0.0     1.2    0.6
+   integral''                         Lib                          src\Lib.hs:(92,1)-(93,46)                            1017          1    0.0    0.0     1.2    0.6
+    precision_integrate''             Lib                          src\Lib.hs:(85,1)-(89,68)                            1031         16    0.0    0.0     1.2    0.6
+     precision_integrate''.new_result Lib                          src\Lib.hs:89:19-68                                  1032         16    0.1    0.3     1.2    0.6
+      integrate''                     Lib                          src\Lib.hs:(75,1)-(82,107)                           1033        246    0.0    0.0     1.1    0.3
+       integrateST''                  Lib                          src\Lib.hs:(69,1)-(72,60)                            1045     293154    0.2    0.0     0.6    0.1
+        integrateST''.left            Lib                          src\Lib.hs:71:29-60                                  1046     268250    0.1    0.0     0.3    0.1
+         rectangular                  Lib                          src\Lib.hs:21:1-39                                   1047     269020    0.1    0.0     0.2    0.1
+          f                           Main                         app\Main.hs:6:1-15                                   1048          0    0.0    0.0     0.0    0.0
+           f.\                        Main                         app\Main.hs:6:12-14                                  1049     285424    0.0    0.0     0.0    0.0
+        integrateST''.right           Lib                          src\Lib.hs:72:29-60                                  1050     249777    0.2    0.0     0.2    0.0
+       integrate''.left               Lib                          src\Lib.hs:80:54-106                                 1044        116    0.0    0.0     0.0    0.0
+       integrate''.sublists           Lib                          src\Lib.hs:82:54-107                                 1035        115    0.0    0.0     0.5    0.2
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                   1040        121    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1036        114    0.4    0.2     0.5    0.2
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1037        115    0.0    0.0     0.0    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1038        342    0.0    0.0     0.0    0.0
+       integrate''.right              Lib                          src\Lib.hs:81:54-106                                 1034        112    0.0    0.0     0.0    0.0
+       rectangular                    Lib                          src\Lib.hs:21:1-39                                   1041         10    0.0    0.0     0.0    0.0
+        f                             Main                         app\Main.hs:6:1-15                                   1042          0    0.0    0.0     0.0    0.0
+         f.\                          Main                         app\Main.hs:6:12-14                                  1043         10    0.0    0.0     0.0    0.0
+    integrate''                       Lib                          src\Lib.hs:(75,1)-(82,107)                           1019          7    0.0    0.0     0.0    0.0
+     rectangular                      Lib                          src\Lib.hs:21:1-39                                   1027          4    0.0    0.0     0.0    0.0
+      f                               Main                         app\Main.hs:6:1-15                                   1028          0    0.0    0.0     0.0    0.0
+       f.\                            Main                         app\Main.hs:6:12-14                                  1029          4    0.0    0.0     0.0    0.0
+     integrate''.left                 Lib                          src\Lib.hs:80:54-106                                 1030          3    0.0    0.0     0.0    0.0
+     integrate''.right                Lib                          src\Lib.hs:81:54-106                                 1020          3    0.0    0.0     0.0    0.0
+     integrate''.sublists             Lib                          src\Lib.hs:82:54-107                                 1021          3    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                   1026          3    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1022          3    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1023          3    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1024          9    0.0    0.0     0.0    0.0
+    integral''.init_delta             Lib                          src\Lib.hs:93:27-46                                  1018          1    0.0    0.0     0.0    0.0
+ CAF:batchMT27                        Main                         <no location info>                                    314          0    0.0    0.0     0.2    0.1
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                            979          0    0.0    0.0     0.2    0.1
+   integral''                         Lib                          src\Lib.hs:(92,1)-(93,46)                             980          1    0.0    0.0     0.2    0.1
+    precision_integrate''             Lib                          src\Lib.hs:(85,1)-(89,68)                             996         13    0.0    0.0     0.2    0.1
+     precision_integrate''.new_result Lib                          src\Lib.hs:89:19-68                                   997         13    0.0    0.0     0.2    0.1
+      integrate''                     Lib                          src\Lib.hs:(75,1)-(82,107)                            998        206    0.0    0.0     0.2    0.0
+       integrateST''                  Lib                          src\Lib.hs:(69,1)-(72,60)                            1010      42896    0.1    0.0     0.1    0.0
+        integrateST''.left            Lib                          src\Lib.hs:71:29-60                                  1011      40240    0.0    0.0     0.0    0.0
+         rectangular                  Lib                          src\Lib.hs:21:1-39                                   1012      40160    0.0    0.0     0.0    0.0
+          f                           Main                         app\Main.hs:6:1-15                                   1013          0    0.0    0.0     0.0    0.0
+           f.\                        Main                         app\Main.hs:6:12-14                                  1014      42212    0.0    0.0     0.0    0.0
+        integrateST''.right           Lib                          src\Lib.hs:72:29-60                                  1015      38993    0.0    0.0     0.0    0.0
+       integrate''.left               Lib                          src\Lib.hs:80:54-106                                 1009         99    0.0    0.0     0.0    0.0
+       integrate''.sublists           Lib                          src\Lib.hs:82:54-107                                 1000         95    0.0    0.0     0.1    0.0
+        ceilDiv                       Lib                          src\Lib.hs:26:1-55                                   1005        100    0.0    0.0     0.0    0.0
+        chunksOf                      Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)    1001         95    0.1    0.0     0.1    0.0
+         build                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18            1002         95    0.0    0.0     0.0    0.0
+          chunksOf.splitter           Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)    1003        283    0.0    0.0     0.0    0.0
+       integrate''.right              Lib                          src\Lib.hs:81:54-106                                  999         94    0.0    0.0     0.0    0.0
+       rectangular                    Lib                          src\Lib.hs:21:1-39                                   1006         10    0.0    0.0     0.0    0.0
+        f                             Main                         app\Main.hs:6:1-15                                   1007          0    0.0    0.0     0.0    0.0
+         f.\                          Main                         app\Main.hs:6:12-14                                  1008         10    0.0    0.0     0.0    0.0
+    integrate''                       Lib                          src\Lib.hs:(75,1)-(82,107)                            982          7    0.0    0.0     0.0    0.0
+     rectangular                      Lib                          src\Lib.hs:21:1-39                                    992          4    0.0    0.0     0.0    0.0
+      f                               Main                         app\Main.hs:6:1-15                                    993          0    0.0    0.0     0.0    0.0
+       f.\                            Main                         app\Main.hs:6:12-14                                   994          4    0.0    0.0     0.0    0.0
+     integrate''.left                 Lib                          src\Lib.hs:80:54-106                                  995          3    0.0    0.0     0.0    0.0
+     integrate''.right                Lib                          src\Lib.hs:81:54-106                                  985          3    0.0    0.0     0.0    0.0
+     integrate''.sublists             Lib                          src\Lib.hs:82:54-107                                  986          3    0.0    0.0     0.0    0.0
+      ceilDiv                         Lib                          src\Lib.hs:26:1-55                                    991          3    0.0    0.0     0.0    0.0
+      chunksOf                        Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(514,1)-(517,49)     987          3    0.0    0.0     0.0    0.0
+       build                          Data.List.Split.Internals    src\Data\List\Split\Internals.hs:499:1-18             988          3    0.0    0.0     0.0    0.0
+        chunksOf.splitter             Data.List.Split.Internals    src\Data\List\Split\Internals.hs:(516,3)-(517,49)     989          9    0.0    0.0     0.0    0.0
+    integral''.init_delta             Lib                          src\Lib.hs:93:27-46                                   981          1    0.0    0.0     0.0    0.0
+ CAF:batchMT29                        Main                         <no location info>                                    315          0    0.0    0.0     0.0    0.0
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                            978          0    0.0    0.0     0.0    0.0
+ CAF:batchMT4                         Main                         <no location info>                                    300          0    0.0    0.0     0.0    0.0
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            648          1    0.0    0.0     0.0    0.0
+ CAF:batchMT5                         Main                         <no location info>                                    294          0    0.0    0.0    28.0   25.7
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            721          0    0.0    0.0    28.0   25.7
+   integral                           Lib                          src\Lib.hs:(44,1)-(45,46)                             722          1    0.0    0.0    28.0   25.7
+    precision_integrate               Lib                          src\Lib.hs:(37,1)-(41,58)                             730         21    0.0    0.0    28.0   25.7
+     precision_integrate.new_result   Lib                          src\Lib.hs:41:19-58                                   731         21    7.6    9.7    28.0   25.7
+      integrate                       Lib                          src\Lib.hs:(31,1)-(34,54)                             732   12582927   15.3   12.1    20.4   16.0
+       integrate.right                Lib                          src\Lib.hs:34:29-54                                   733   12582906    0.7    0.0     0.7    0.0
+       integrate.left                 Lib                          src\Lib.hs:33:29-52                                   734   11691373    0.5    0.0     4.5    3.9
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    735   10905018    3.0    2.9     3.9    3.9
+         f                            Main                         app\Main.hs:6:1-15                                    736          0    0.5    0.0     0.9    1.0
+          f.\                         Main                         app\Main.hs:6:12-14                                   737   10944254    0.4    1.0     0.4    1.0
+    integrate                         Lib                          src\Lib.hs:(31,1)-(34,54)                             724          4    0.0    0.0     0.0    0.0
+     integrate.left                   Lib                          src\Lib.hs:33:29-52                                   726          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    727          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    728          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   729          3    0.0    0.0     0.0    0.0
+     integrate.right                  Lib                          src\Lib.hs:34:29-54                                   725          3    0.0    0.0     0.0    0.0
+    integral.init_delta               Lib                          src\Lib.hs:45:27-46                                   723          1    0.0    0.0     0.0    0.0
+ CAF:batchMT6                         Main                         <no location info>                                    295          0    0.0    0.0    13.2   12.8
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            704          0    0.0    0.0    13.2   12.8
+   integral                           Lib                          src\Lib.hs:(44,1)-(45,46)                             705          1    0.0    0.0    13.2   12.8
+    precision_integrate               Lib                          src\Lib.hs:(37,1)-(41,58)                             713         20    0.0    0.0    13.2   12.8
+     precision_integrate.new_result   Lib                          src\Lib.hs:41:19-58                                   714         20    3.7    4.9    13.2   12.8
+      integrate                       Lib                          src\Lib.hs:(31,1)-(34,54)                             715    6291470    6.9    6.1     9.4    8.0
+       integrate.right                Lib                          src\Lib.hs:34:29-54                                   716    6291450    0.3    0.0     0.3    0.0
+       integrate.left                 Lib                          src\Lib.hs:33:29-52                                   717    5849905    0.3    0.0     2.2    1.9
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    718    5706133    1.5    1.4     1.9    1.9
+         f                            Main                         app\Main.hs:6:1-15                                    719          0    0.2    0.0     0.4    0.5
+          f.\                         Main                         app\Main.hs:6:12-14                                   720    5439727    0.2    0.5     0.2    0.5
+    integrate                         Lib                          src\Lib.hs:(31,1)-(34,54)                             707          4    0.0    0.0     0.0    0.0
+     integrate.left                   Lib                          src\Lib.hs:33:29-52                                   709          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    710          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    711          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   712          3    0.0    0.0     0.0    0.0
+     integrate.right                  Lib                          src\Lib.hs:34:29-54                                   708          3    0.0    0.0     0.0    0.0
+    integral.init_delta               Lib                          src\Lib.hs:45:27-46                                   706          1    0.0    0.0     0.0    0.0
+ CAF:batchMT7                         Main                         <no location info>                                    296          0    0.0    0.0     3.1    3.2
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            687          0    0.0    0.0     3.1    3.2
+   integral                           Lib                          src\Lib.hs:(44,1)-(45,46)                             688          1    0.0    0.0     3.1    3.2
+    precision_integrate               Lib                          src\Lib.hs:(37,1)-(41,58)                             696         18    0.0    0.0     3.1    3.2
+     precision_integrate.new_result   Lib                          src\Lib.hs:41:19-58                                   697         18    1.0    1.2     3.1    3.2
+      integrate                       Lib                          src\Lib.hs:(31,1)-(34,54)                             698    1572876    1.8    1.5     2.2    2.0
+       integrate.right                Lib                          src\Lib.hs:34:29-54                                   699    1572858    0.0    0.0     0.0    0.0
+       integrate.left                 Lib                          src\Lib.hs:33:29-52                                   700    1461520    0.1    0.0     0.4    0.5
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    701    1355931    0.2    0.4     0.3    0.5
+         f                            Main                         app\Main.hs:6:1-15                                    702          0    0.0    0.0     0.1    0.1
+          f.\                         Main                         app\Main.hs:6:12-14                                   703    1356182    0.1    0.1     0.1    0.1
+    integrate                         Lib                          src\Lib.hs:(31,1)-(34,54)                             690          4    0.0    0.0     0.0    0.0
+     integrate.left                   Lib                          src\Lib.hs:33:29-52                                   692          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    693          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    694          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   695          3    0.0    0.0     0.0    0.0
+     integrate.right                  Lib                          src\Lib.hs:34:29-54                                   691          3    0.0    0.0     0.0    0.0
+    integral.init_delta               Lib                          src\Lib.hs:45:27-46                                   689          1    0.0    0.0     0.0    0.0
+ CAF:batchMT8                         Main                         <no location info>                                    297          0    0.0    0.0     0.8    0.8
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            670          0    0.0    0.0     0.8    0.8
+   integral                           Lib                          src\Lib.hs:(44,1)-(45,46)                             671          1    0.0    0.0     0.8    0.8
+    precision_integrate               Lib                          src\Lib.hs:(37,1)-(41,58)                             679         16    0.0    0.0     0.8    0.8
+     precision_integrate.new_result   Lib                          src\Lib.hs:41:19-58                                   680         16    0.2    0.3     0.8    0.8
+      integrate                       Lib                          src\Lib.hs:(31,1)-(34,54)                             681     393226    0.4    0.4     0.5    0.5
+       integrate.right                Lib                          src\Lib.hs:34:29-54                                   682     393210    0.0    0.0     0.0    0.0
+       integrate.left                 Lib                          src\Lib.hs:33:29-52                                   683     362626    0.0    0.0     0.1    0.1
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    684     341078    0.1    0.1     0.1    0.1
+         f                            Main                         app\Main.hs:6:1-15                                    685          0    0.0    0.0     0.0    0.0
+          f.\                         Main                         app\Main.hs:6:12-14                                   686     345643    0.0    0.0     0.0    0.0
+    integrate                         Lib                          src\Lib.hs:(31,1)-(34,54)                             673          4    0.0    0.0     0.0    0.0
+     integrate.left                   Lib                          src\Lib.hs:33:29-52                                   675          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    676          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    677          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   678          3    0.0    0.0     0.0    0.0
+     integrate.right                  Lib                          src\Lib.hs:34:29-54                                   674          3    0.0    0.0     0.0    0.0
+    integral.init_delta               Lib                          src\Lib.hs:45:27-46                                   672          1    0.0    0.0     0.0    0.0
+ CAF:batchMT9                         Main                         <no location info>                                    298          0    0.0    0.0     0.1    0.1
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            651          0    0.0    0.0     0.1    0.1
+   integral                           Lib                          src\Lib.hs:(44,1)-(45,46)                             652          1    0.0    0.0     0.1    0.1
+    precision_integrate               Lib                          src\Lib.hs:(37,1)-(41,58)                             662         13    0.0    0.0     0.1    0.1
+     precision_integrate.new_result   Lib                          src\Lib.hs:41:19-58                                   663         13    0.0    0.0     0.1    0.1
+      integrate                       Lib                          src\Lib.hs:(31,1)-(34,54)                             664      49159    0.0    0.0     0.1    0.1
+       integrate.right                Lib                          src\Lib.hs:34:29-54                                   665      49146    0.0    0.0     0.0    0.0
+       integrate.left                 Lib                          src\Lib.hs:33:29-52                                   666      46675    0.0    0.0     0.0    0.0
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    667      46264    0.0    0.0     0.0    0.0
+         f                            Main                         app\Main.hs:6:1-15                                    668          0    0.0    0.0     0.0    0.0
+          f.\                         Main                         app\Main.hs:6:12-14                                   669      45141    0.0    0.0     0.0    0.0
+    integrate                         Lib                          src\Lib.hs:(31,1)-(34,54)                             654          4    0.0    0.0     0.0    0.0
+     integrate.left                   Lib                          src\Lib.hs:33:29-52                                   658          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    659          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    660          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   661          3    0.0    0.0     0.0    0.0
+     integrate.right                  Lib                          src\Lib.hs:34:29-54                                   657          3    0.0    0.0     0.0    0.0
+    integral.init_delta               Lib                          src\Lib.hs:45:27-46                                   653          1    0.0    0.0     0.0    0.0
+ CAF:batchST1                         Main                         <no location info>                                    292          0    0.0    0.0     0.0    0.0
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             558          1    0.0    0.0     0.0    0.0
+ CAF:batchST2                         Main                         <no location info>                                    286          0    0.0    0.0     6.5   15.8
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             631          0    0.0    0.0     6.5   15.8
+   integralST                         Lib                          src\Lib.hs:(111,1)-(112,46)                           632          1    0.0    0.0     6.5   15.8
+    precision_integrateST             Lib                          src\Lib.hs:(104,1)-(108,60)                           640         21    0.0    0.0     6.5   15.8
+     precision_integrateST.new_result Lib                          src\Lib.hs:108:19-60                                  641         21    2.4    9.7     6.5   15.8
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            642   12582927    0.5    0.0     4.1    6.1
+       integrateST.left               Lib                          src\Lib.hs:100:29-52                                  643   12582906    0.2    0.0     2.5    6.1
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    644   12582906    1.8    4.9     2.3    6.1
+         f                            Main                         app\Main.hs:6:1-15                                    645          0    0.2    0.0     0.5    1.2
+          f.\                         Main                         app\Main.hs:6:12-14                                   646   12582906    0.3    1.2     0.3    1.2
+       integrateST.right              Lib                          src\Lib.hs:101:29-56                                  647   12582906    1.1    0.0     1.1    0.0
+    integrateST                       Lib                          src\Lib.hs:(98,1)-(101,56)                            634          4    0.0    0.0     0.0    0.0
+     integrateST.left                 Lib                          src\Lib.hs:100:29-52                                  635          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    636          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    637          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   638          3    0.0    0.0     0.0    0.0
+     integrateST.right                Lib                          src\Lib.hs:101:29-56                                  639          3    0.0    0.0     0.0    0.0
+    integralST.init_delta             Lib                          src\Lib.hs:112:27-46                                  633          1    0.0    0.0     0.0    0.0
+ CAF:batchST3                         Main                         <no location info>                                    287          0    0.0    0.0     3.1    7.9
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             614          0    0.0    0.0     3.1    7.9
+   integralST                         Lib                          src\Lib.hs:(111,1)-(112,46)                           615          1    0.0    0.0     3.1    7.9
+    precision_integrateST             Lib                          src\Lib.hs:(104,1)-(108,60)                           623         20    0.0    0.0     3.1    7.9
+     precision_integrateST.new_result Lib                          src\Lib.hs:108:19-60                                  624         20    1.0    4.9     3.1    7.9
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            625    6291470    0.3    0.0     2.1    3.0
+       integrateST.left               Lib                          src\Lib.hs:100:29-52                                  626    6291450    0.2    0.0     1.3    3.0
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    627    6291450    0.9    2.4     1.2    3.0
+         f                            Main                         app\Main.hs:6:1-15                                    628          0    0.1    0.0     0.2    0.6
+          f.\                         Main                         app\Main.hs:6:12-14                                   629    6291450    0.1    0.6     0.1    0.6
+       integrateST.right              Lib                          src\Lib.hs:101:29-56                                  630    6291450    0.5    0.0     0.5    0.0
+    integrateST                       Lib                          src\Lib.hs:(98,1)-(101,56)                            617          4    0.0    0.0     0.0    0.0
+     integrateST.left                 Lib                          src\Lib.hs:100:29-52                                  618          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    619          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    620          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   621          3    0.0    0.0     0.0    0.0
+     integrateST.right                Lib                          src\Lib.hs:101:29-56                                  622          3    0.0    0.0     0.0    0.0
+    integralST.init_delta             Lib                          src\Lib.hs:112:27-46                                  616          1    0.0    0.0     0.0    0.0
+ CAF:batchST4                         Main                         <no location info>                                    288          0    0.0    0.0     0.8    2.0
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             597          0    0.0    0.0     0.8    2.0
+   integralST                         Lib                          src\Lib.hs:(111,1)-(112,46)                           598          1    0.0    0.0     0.8    2.0
+    precision_integrateST             Lib                          src\Lib.hs:(104,1)-(108,60)                           606         18    0.0    0.0     0.8    2.0
+     precision_integrateST.new_result Lib                          src\Lib.hs:108:19-60                                  607         18    0.3    1.2     0.8    2.0
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            608    1572876    0.1    0.0     0.5    0.8
+       integrateST.left               Lib                          src\Lib.hs:100:29-52                                  609    1572858    0.1    0.0     0.3    0.8
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    610    1572858    0.2    0.6     0.3    0.8
+         f                            Main                         app\Main.hs:6:1-15                                    611          0    0.0    0.0     0.1    0.2
+          f.\                         Main                         app\Main.hs:6:12-14                                   612    1572858    0.0    0.2     0.0    0.2
+       integrateST.right              Lib                          src\Lib.hs:101:29-56                                  613    1572858    0.1    0.0     0.1    0.0
+    integrateST                       Lib                          src\Lib.hs:(98,1)-(101,56)                            600          4    0.0    0.0     0.0    0.0
+     integrateST.left                 Lib                          src\Lib.hs:100:29-52                                  601          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    602          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    603          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   604          3    0.0    0.0     0.0    0.0
+     integrateST.right                Lib                          src\Lib.hs:101:29-56                                  605          3    0.0    0.0     0.0    0.0
+    integralST.init_delta             Lib                          src\Lib.hs:112:27-46                                  599          1    0.0    0.0     0.0    0.0
+ CAF:batchST5                         Main                         <no location info>                                    289          0    0.0    0.0     0.2    0.5
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             580          0    0.0    0.0     0.2    0.5
+   integralST                         Lib                          src\Lib.hs:(111,1)-(112,46)                           581          1    0.0    0.0     0.2    0.5
+    precision_integrateST             Lib                          src\Lib.hs:(104,1)-(108,60)                           589         16    0.0    0.0     0.2    0.5
+     precision_integrateST.new_result Lib                          src\Lib.hs:108:19-60                                  590         16    0.1    0.3     0.2    0.5
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            591     393226    0.0    0.0     0.1    0.2
+       integrateST.left               Lib                          src\Lib.hs:100:29-52                                  592     393210    0.0    0.0     0.1    0.2
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    593     393210    0.1    0.2     0.1    0.2
+         f                            Main                         app\Main.hs:6:1-15                                    594          0    0.0    0.0     0.0    0.0
+          f.\                         Main                         app\Main.hs:6:12-14                                   595     393210    0.0    0.0     0.0    0.0
+       integrateST.right              Lib                          src\Lib.hs:101:29-56                                  596     393210    0.0    0.0     0.0    0.0
+    integrateST                       Lib                          src\Lib.hs:(98,1)-(101,56)                            583          4    0.0    0.0     0.0    0.0
+     integrateST.left                 Lib                          src\Lib.hs:100:29-52                                  584          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    585          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    586          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   587          3    0.0    0.0     0.0    0.0
+     integrateST.right                Lib                          src\Lib.hs:101:29-56                                  588          3    0.0    0.0     0.0    0.0
+    integralST.init_delta             Lib                          src\Lib.hs:112:27-46                                  582          1    0.0    0.0     0.0    0.0
+ CAF:batchST6                         Main                         <no location info>                                    290          0    0.0    0.0     0.0    0.1
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             561          0    0.0    0.0     0.0    0.1
+   integralST                         Lib                          src\Lib.hs:(111,1)-(112,46)                           563          1    0.0    0.0     0.0    0.1
+    precision_integrateST             Lib                          src\Lib.hs:(104,1)-(108,60)                           572         13    0.0    0.0     0.0    0.1
+     precision_integrateST.new_result Lib                          src\Lib.hs:108:19-60                                  573         13    0.0    0.0     0.0    0.1
+      integrateST                     Lib                          src\Lib.hs:(98,1)-(101,56)                            574      49159    0.0    0.0     0.0    0.0
+       integrateST.left               Lib                          src\Lib.hs:100:29-52                                  575      49146    0.0    0.0     0.0    0.0
+        rectangular                   Lib                          src\Lib.hs:21:1-39                                    576      49146    0.0    0.0     0.0    0.0
+         f                            Main                         app\Main.hs:6:1-15                                    577          0    0.0    0.0     0.0    0.0
+          f.\                         Main                         app\Main.hs:6:12-14                                   578      49146    0.0    0.0     0.0    0.0
+       integrateST.right              Lib                          src\Lib.hs:101:29-56                                  579      49146    0.0    0.0     0.0    0.0
+    integrateST                       Lib                          src\Lib.hs:(98,1)-(101,56)                            565          4    0.0    0.0     0.0    0.0
+     integrateST.left                 Lib                          src\Lib.hs:100:29-52                                  566          3    0.0    0.0     0.0    0.0
+      rectangular                     Lib                          src\Lib.hs:21:1-39                                    567          3    0.0    0.0     0.0    0.0
+       f                              Main                         app\Main.hs:6:1-15                                    569          0    0.0    0.0     0.0    0.0
+        f.\                           Main                         app\Main.hs:6:12-14                                   570          3    0.0    0.0     0.0    0.0
+     integrateST.right                Lib                          src\Lib.hs:101:29-56                                  571          3    0.0    0.0     0.0    0.0
+    integralST.init_delta             Lib                          src\Lib.hs:112:27-46                                  564          1    0.0    0.0     0.0    0.0
+ CAF:batchST8                         Main                         <no location info>                                    291          0    0.0    0.0     0.0    0.0
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             560          0    0.0    0.0     0.0    0.0
+ CAF:f                                Main                         app\Main.hs:6:1                                       284          0    0.0    0.0     0.0    0.0
+  f                                   Main                         app\Main.hs:6:1-15                                    568          1    0.0    0.0     0.0    0.0
+ CAF:integral'_ds                     Lib                          <no location info>                                    351          0    0.0    0.0     0.0    0.0
+  integrate'                          Lib                          src\Lib.hs:(50,1)-(53,96)                             750          0    0.0    0.0     0.0    0.0
+   parMap                             Control.Parallel.Strategies  Control\Parallel\Strategies.hs:616:1-48               751          0    0.0    0.0     0.0    0.0
+    rparWith                          Control.Parallel.Strategies  Control\Parallel\Strategies.hs:494:1-32               759          1    0.0    0.0     0.0    0.0
+ CAF:lvl3_r4Yo                        Lib                          <no location info>                                    349          0    0.0    0.0     0.0    0.0
+  integrate''                         Lib                          src\Lib.hs:(75,1)-(82,107)                            983          0    0.0    0.0     0.0    0.0
+   intLog2                            Math.NumberTheory.Logarithms src\Math\NumberTheory\Logarithms.hs:(114,1)-(116,55)  984          1    0.0    0.0     0.0    0.0
+ CAF:main1                            Main                         <no location info>                                    320          0    0.0    0.0     0.0    0.0
+  main                                Main                         app\Main.hs:(42,1)-(47,12)                            554          1    0.0    0.0     0.0    0.0
+ CAF:main3                            Main                         <no location info>                                    319          0    0.0    0.0     0.0    0.0
+  main                                Main                         app\Main.hs:(42,1)-(47,12)                            556          0    0.0    0.0     0.0    0.0
+ CAF:main4                            Main                         <no location info>                                    318          0    0.0    0.0     0.0    0.0
+  main                                Main                         app\Main.hs:(42,1)-(47,12)                            557          0    0.0    0.0     0.0    0.0
+ CAF:par                              Control.Parallel             Control\Parallel.hs:47:1-3                            371          0    0.0    0.0     0.0    0.0
+  par                                 Control.Parallel             Control\Parallel.hs:47:1-18                           655          1    0.0    0.0     0.0    0.0
+ CAF:parList                          Control.Parallel.Strategies  Control\Parallel\Strategies.hs:552:1-7                396          0    0.0    0.0     0.0    0.0
+  parList                             Control.Parallel.Strategies  Control\Parallel\Strategies.hs:552:1-24               752          1    0.0    0.0     0.0    0.0
+ CAF:poly_z_rbEB                      Control.Parallel.Strategies  <no location info>                                    395          0    0.0    0.0     0.0    0.0
+ CAF:pseq                             Control.Parallel             Control\Parallel.hs:69:1-4                            372          0    0.0    0.0     0.0    0.0
+  pseq                                Control.Parallel             Control\Parallel.hs:69:1-20                           656          1    0.0    0.0     0.0    0.0
+ CAF:range                            Main                         app\Main.hs:7:1-5                                     285          0    0.0    0.0     0.0    0.0
+  range                               Main                         app\Main.hs:7:1-18                                    562          1    0.0    0.0     0.0    0.0
+ CAF:runEval                          Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-7                383          0    0.0    0.0     0.0    0.0
+  runEval                             Control.Parallel.Strategies  Control\Parallel\Strategies.hs:219:1-42               747          1    0.0    0.0     0.0    0.0
+ main                                 Main                         app\Main.hs:(42,1)-(47,12)                            555          0    0.0    0.0     0.0    0.0
+  batchMT1                            Main                         app\Main.hs:(17,1)-(23,36)                            649          0    0.0    0.0     0.0    0.0
+  batchMT2                            Main                         app\Main.hs:(25,1)-(31,37)                            739          0    0.0    0.0     0.0    0.0
+  batchMT3                            Main                         app\Main.hs:(33,1)-(39,38)                            977          0    0.0    0.0     0.0    0.0
+  batchST                             Main                         app\Main.hs:(9,1)-(15,38)                             559          0    0.0    0.0     0.0    0.0

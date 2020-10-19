@@ -1,0 +1,104 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 970aea03fd7f9f04cbd677599c1db2b87a12736820e837b62eade886d37c9f89
+
+name:           lab1v4
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/lab1v4#readme>
+homepage:       https://github.com/githubuser/lab1v4#readme
+bug-reports:    https://github.com/githubuser/lab1v4/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/lab1v4
+
+library
+  exposed-modules:
+      Author
+      Common
+      Legals
+      Lib
+      Service
+      ServiceType
+      Stats
+  other-modules:
+      Paths_lab1v4
+  hs-source-dirs:
+      src
+  build-depends:
+      HDBC
+    , HDBC-odbc
+    , HUnit
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , mtl
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-smallcheck
+    , time
+  default-language: Haskell2010
+
+executable lab1v4-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_lab1v4
+  hs-source-dirs:
+      app
+  build-depends:
+      HDBC
+    , HDBC-odbc
+    , HUnit
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , lab1v4
+    , mtl
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-smallcheck
+    , time
+  default-language: Haskell2010
+
+test-suite lab1v4-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      AuthorTests
+      LegalsTests
+      ServiceTests
+      ServiceTypeTests
+      StatsTests
+      Paths_lab1v4
+  hs-source-dirs:
+      test
+  build-depends:
+      HDBC
+    , HDBC-odbc
+    , HUnit
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , lab1v4
+    , mtl
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-smallcheck
+    , time
+  default-language: Haskell2010

@@ -1,0 +1,4 @@
+C:\Users\varmi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" D:\dev\Univ\Univ-4.2\Fundametal_mathematical_data_protection\Lab2\lab2-cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/dev/Univ/Univ-4.2/Fundametal_mathematical_data_protection/Lab2/lab2-cpp/cmake-build-release
